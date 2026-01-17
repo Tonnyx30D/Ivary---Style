@@ -71,6 +71,22 @@
       line-height: 1.4;
     }
 
+    a.whatsapp {
+      background-color: #25D366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
+      transition: transform 0.2s ease;
+    }
+
+    a.whatsapp:hover {
+      transform: scale(1.05);
+    }
+
     .contact-buttons {
       text-align: center;
       margin-top: 40px;
@@ -89,10 +105,6 @@
 
     .contact-buttons a:hover {
       transform: scale(1.05);
-    }
-
-    .whatsapp {
-      background-color: #25D366;
     }
 
     .instagram {
@@ -116,19 +128,25 @@
   <p class="subtitle">Descubre nuestros productos para resaltar tu belleza</p>
 
   <div class="productos-container">
+
     <div class="producto">
       <img src="labial.jpg" alt="Labial Líquido Nude">
       <strong>Labial Líquido Nude</strong>
       <p>Acabado mate, color duradero y suave para todos los tonos de piel.</p>
+      <a href="https://wa.me/51935923064?text=Hola,%20quiero%20comprar%20el%20Labial%20Líquido%20Nude" 
+         class="whatsapp">Comprar por WhatsApp</a>
     </div>
 
     <div class="producto">
       <img src="sombras.jpg" alt="Paleta de Sombras Brillantes">
       <strong>Paleta de Sombras Brillantes</strong>
       <p>12 tonos intensos para crear looks únicos, desde natural hasta glam.</p>
+      <a href="https://wa.me/51935923064?text=Hola,%20quiero%20comprar%20la%20Paleta%20de%20Sombras%20Brillantes" 
+         class="whatsapp">Comprar por WhatsApp</a>
     </div>
 
     <!-- Puedes agregar más productos aquí siguiendo el mismo patrón -->
+
   </div>
 
   <div class="contact-buttons">
