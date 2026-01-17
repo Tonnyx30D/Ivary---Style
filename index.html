@@ -166,7 +166,6 @@
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
     }
-
   </style>
 </head>
 <body>
@@ -178,35 +177,37 @@
 
   <!-- Sección de categorías -->
   <div class="categorias">
-    <div class="categoria">Labiales</div>
-    <div class="categoria">Sombras</div>
-    <div class="categoria">Bases</div>
+    <div class="categoria" data-categoria="labiales">Labiales</div>
+    <div class="categoria" data-categoria="sombras">Sombras</div>
+    <div class="categoria" data-categoria="bases">Bases</div>
+    <div class="categoria" data-categoria="todas">Todas</div>
   </div>
 
   <!-- Productos -->
   <div class="productos">
 
-    <div class="producto">
+    <div class="producto labiales">
       <img src="labial.jpg" alt="Labial Líquido Nude">
       <strong>Labial Líquido Nude</strong>
       <p>Acabado mate, color duradero y suave para todos los tonos de piel.</p>
       <a href="https://wa.me/51935923064?text=Hola,%20quiero%20comprar%20el%20Labial%20Líquido%20Nude" class="whatsapp">Comprar por WhatsApp</a>
     </div>
 
-    <div class="producto">
+    <div class="producto sombras">
       <img src="sombras.jpg" alt="Paleta de Sombras Brillantes">
       <strong>Paleta de Sombras Brillantes</strong>
       <p>12 tonos intensos para crear looks únicos, desde natural hasta glam.</p>
       <a href="https://wa.me/51935923064?text=Hola,%20quiero%20comprar%20la%20Paleta%20de%20Sombras%20Brillantes" class="whatsapp">Comprar por WhatsApp</a>
     </div>
 
-    <div class="producto">
+    <div class="producto bases">
       <img src="base.jpg" alt="Base Líquida Natural">
       <strong>Base Líquida Natural</strong>
       <p>Textura ligera que cubre imperfecciones y unifica el tono de piel.</p>
       <a href="https://wa.me/51935923064?text=Hola,%20quiero%20comprar%20la%20Base%20Líquida%20Natural" class="whatsapp">Comprar por WhatsApp</a>
     </div>
 
+    <!-- Agrega más productos aquí -->
   </div>
 
   <!-- Botones de contacto generales -->
@@ -218,6 +219,30 @@
   <footer>
     © 2026 Catálogo de Maquillaje. Todos los derechos reservados.
   </footer>
+
+  <!-- JavaScript para filtrar productos por categoría -->
+  <script>
+    const botones = document.querySelectorAll('.categoria');
+    const productos = document.querySelectorAll('.producto');
+
+    botones.forEach(boton => {
+      boton.addEventListener('click', () => {
+        const categoria = boton.getAttribute('data-categoria');
+
+        productos.forEach(producto => {
+          if (categoria === 'todas') {
+            producto.style.display = 'block';
+          } else {
+            if (producto.classList.contains(categoria)) {
+              producto.style.display = 'block';
+            } else {
+              producto.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
