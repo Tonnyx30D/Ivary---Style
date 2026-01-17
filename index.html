@@ -18,10 +18,10 @@
 </header>
 
 <div class="categorias">
+  <div class="categoria active" data-categoria="todas">Todas</div>
   <div class="categoria" data-categoria="labiales">Labiales</div>
   <div class="categoria" data-categoria="sombras">Sombras</div>
   <div class="categoria" data-categoria="bases">Bases</div>
-  <div class="categoria" data-categoria="todas">Todas</div>
 </div>
 
 <div class="productos">
@@ -79,9 +79,14 @@
 
   let carrito = [];
 
-  // FILTRO POR CATEGORÍA
+  // FILTRO POR CATEGORÍA CON ACTIVE
   botonesCategoria.forEach(boton => {
     boton.addEventListener('click', () => {
+      // Remover clase active de todos
+      botonesCategoria.forEach(b => b.classList.remove('active'));
+      // Agregar active al que se clickeó
+      boton.classList.add('active');
+
       const cat = boton.dataset.categoria;
       productos.forEach(p => {
         p.style.display = (cat === 'todas' || p.classList.contains(cat)) ? 'block' : 'none';
